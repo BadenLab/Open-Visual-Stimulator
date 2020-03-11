@@ -1,6 +1,15 @@
-## Open Visual Stimulator
+<p align="right"><img src="https://github.com/BadenLab/Zebrafish-visual-space-model/blob/master/Images/Logo.png" width="300"/>
+<h1 align="center">Open Visual Stimulator</h1></p>
+<h3 align="center">An open source arbitrary-spectrum spatial visual stimulator for vision research.</h4>
+<p align="center"><h6 align="right">by K. Franke, A.M. Chagas, Z. Zhao, M.J.Y. Zimmermann, Y. Qiu, K. Szatko, T. Baden, T. Euler</h6></p>
 
-This repository holds the resources for a flexible, spatial visual stimulator with up to 6 chromatic channels. It combines commercial digital light processing (DLP) devices with open hard- and software components that can be easily adapted to the experimentalist’s specific needs. With this we intend to start a community effort of sharing and further developing a common stimulator design.
+<br>
+
+### This project is a part of a larger work that can be found on the [Euler lab GitHub](https://github.com/eulerlab/open-visual-stimulator)
+
+This project is licensed under the [MIT License](https://github.com/BadenLab/open-visual-stimulator/blob/master/LICENSE)<br>
+
+<h4 align="justify">This repository holds the resources for a flexible, spatial visual stimulator with up to 6 chromatic channels. It combines commercial digital light processing (DLP) devices with open hard- and software components that can be easily adapted to the experimentalist’s specific needs. With this we intend to start a community effort of sharing and further developing a common stimulator design.</h4></p>
 
 Please find more details on the stimulator in the following publication:
 
@@ -10,25 +19,30 @@ For the newest changes and additions, see [release notes](https://github.com/eul
 
 ### Pictures
 
-![](https://github.com/eulerlab/open-visual-stimulator/blob/master/pics/Zebrafish_Cinema.png)
-_Rendering of the 4-channel R-G-B-UV zebrafish stimulator (by MJY Zimmermann)._
+![](https://github.com/badenlab/open-visual-stimulator/blob/master/Images/Zebrafish_Cinema.png)
+_Rendering of the 4-channel R-G-B-UV zebrafish stimulator._
 
-![](https://github.com/eulerlab/open-visual-stimulator/blob/master/pics/Mouse_TTC.png)
-_Rendering of through-the-conderser (TTC) G-UV mouse light stimulator (by MJY Zimmermann)._
 
-![](https://github.com/eulerlab/open-visual-stimulator/blob/master/pics/Mouse_TTO.png)
-_Rendering of through-the-objective (TTO) G-UV mouse light stimulator (by MJY Zimmermann)._ 
 
 
 ### Ordering of PCB boards
 
-If you are interested in ordering boards and components, please find more information in the boards folder [readme](https://github.com/eulerlab/open-visual-stimulator/blob/master/boards/readme.md) file.
+If you are interested in ordering boards and components, please find more information in the boards folder [readme](https://github.com/badenlab/open-visual-stimulator/blob/master/PCB/readme.md) file.
 
 ## Repository structure
 
 ```
-├───pics                                      Pictures
-├───boards                                    LED driver/blanking boards
+├───3D Designs                                OpenSCAD and STL files for 3D printed parts
+|   |
+│   ├───Fish_cinema                           - Fish tank used in the fish setup
+│   ├───SSR_board                             - Designs for plate and cover of the SSR board
+│   └───optical_components                    - optomechanical parts for LED assemblies
+|           ├───fish_stimulator
+|           └───lcr_addons
+|
+├───Images                                    Pictures
+|
+├───PCB                                       LED driver/blanking boards
 │   ├───lcr_add-on                            - KiCad files for board that combines LCr and
 |   |   |                                       blanking signals
 |   |   ├───connector_coaxial.pretty          - BNC connector description (KiCad)
@@ -45,24 +59,7 @@ If you are interested in ordering boards and components, please find more inform
 |   └───arduino_code_for_testing_circuits     - Arduino code to emulate blanking and LCr signals
 |       └───lcr_emulator
 |
-├───printed_parts                             OpenSCAD and STL files for 3D printed parts
-|   |
-│   ├───Fish_cinema                           - Fish tank used in the fish setup
-│   ├───SSR_board                             - Designs for plate and cover of the SSR board
-│   └───optical_components                    - optomechanical parts for LED assemblies
-|           ├───fish_stimulator
-|           ├───cmouse_stimulator
-|           └───lcr_addons
-├───calibration_mouse                         Calibration of dichroic mouse stimulator
-│   ├───data                                  - recorded calibration data (custom LEDs and TFT monitor)
-│   ├───datasheets                            - spectrometer data sheet, etc.
-│   ├───filters                               - dichroic filter spectra
-│   ├───light-sources                         - spectra of LEDs
-│   ├───opsins                                - mouse opsin sensitivity curves
-│   ├───scripts                               - Python scripts used in iPython notebooks
-|   └───spectrometer-calibration-files        - USB2+ calibration data
-|
-└───calibration_zebrafish                     Calibration of tetrachromatic zebrafish stimulator
+└───Stimulator Calibration                    Calibration of tetrachromatic zebrafish stimulator
     ├───data                                  - recorded calibration data (custom LEDs)
     ├───datasheets                            - spectrometer & powermeter data sheet.
     ├───light-sources                         - LED spectra measured behind the teflon screen
